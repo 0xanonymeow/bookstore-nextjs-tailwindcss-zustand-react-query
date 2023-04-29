@@ -1,0 +1,43 @@
+{
+  "name": "bookstore-nextjs-tailwindcss",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.0.4",
+    "@radix-ui/react-scroll-area": "^1.0.3",
+    "@radix-ui/react-tabs": "^1.0.3",
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
+    "autoprefixer": "10.4.14",
+    "class-variance-authority": "^0.6.0",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.1",
+    "framer-motion": "^10.12.4",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.188.0",
+    "next": "13.3.1",
+    "postcss": "8.4.23",
+    "prism-react-renderer": "^2.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "sharp": "^0.32.1",
+    "simplebar-react": "^3.2.4",
+    "tailwind-merge": "^1.12.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8"
+  }
+}
