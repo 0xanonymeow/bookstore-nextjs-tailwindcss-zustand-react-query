@@ -23,7 +23,7 @@ export default function Page() {
           <div className="h-full gap-6 flex flex-col justify-start xl:justify-center items-center lg:items-start">
             <LargeHeading
               size="lg"
-              className="three-d text-light-gold dark:text-white backdrop-blur-"
+              className="three-d text-light-gold dark:text-white backdrop-blur-sm"
             >
               Cozy Bedtime Routine for Little Ones
             </LargeHeading>
