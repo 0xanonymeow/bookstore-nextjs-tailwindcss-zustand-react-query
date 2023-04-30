@@ -9,7 +9,10 @@ const Navbar = ({}) => {
       <div className="container max-w-7xl mx-auto w-full flex justify-between items-center">
         <Link
           href="/"
-          className={cn(buttonVariants({ variant: 'link' }), 'sm:text-xl ')}
+          className={cn(
+            buttonVariants({ variant: 'link' }),
+            'sm:text-xl font-bold text-white drop-shadow-lg'
+          )}
         >
           Bedtime Story
         </Link>

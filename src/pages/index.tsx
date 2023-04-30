@@ -39,7 +39,7 @@ export default function Page() {
             >
               Cozy Bedtime Routine for Little Ones
             </LargeHeading>
-            <Paragraph className="p-three-d text-white dark:text-white lg:text-left">
+            <Paragraph className="three-d-p text-white dark:text-white lg:text-left">
               Create a Soothing Bedtime Environment with Our Handpicked Books
             </Paragraph>
             <div className="relative w-full max-w-lg lg:max-w-3xl lg:left-1/2 aspect-[16/9] lg:absolute"></div>
