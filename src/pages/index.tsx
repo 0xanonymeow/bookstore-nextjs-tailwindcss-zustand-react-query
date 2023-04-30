@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <>
       <div
-        className="absolute w-full h-1/2 top-0"
+        className="absolute top-0 w-full h-1/2 xl:h-2/3"
         style={{
           backgroundImage: `url(/banner.png)`,
           backgroundSize: 'cover',
