@@ -19,7 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
         </Layout>
         <div className="absolute top-1/2 left-1/2"></div>
       </div>
-      //{' '}
     </div>
   )
 }
