@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import { buttonVariants } from '@/components/Button'
 import ThemeToggle from '@/components/ThemeToggle'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 const Navbar = ({}) => {
   return (
@@ -25,19 +25,19 @@ const Navbar = ({}) => {
             Explore
           </Link>
           <Link
-            href="/categories"
+            href="/bestseller"
             className={cn(buttonVariants({ variant: 'ghost' }), 'sm: text-lg')}
           >
             Bestseller
           </Link>
           <Link
-            href="/saved"
+            href="/category"
             className={cn(buttonVariants({ variant: 'ghost' }), 'sm: text-lg')}
           >
             Category
           </Link>
           <Link
-            href="/categories"
+            href="/saved"
             className={cn(buttonVariants({ variant: 'ghost' }), 'sm: text-lg')}
           >
             Saved
