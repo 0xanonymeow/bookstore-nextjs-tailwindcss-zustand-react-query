@@ -1,8 +1,8 @@
-import { cn } from '@/lib/utils'
-import { Inter } from 'next/font/google'
 import Layout from '@/components/Layout'
-import type { AppProps } from 'next/app'
+import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
+import type { AppProps } from 'next/app'
+import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <Layout>
           <Component {...pageProps} />
         </Layout>
+        <div className="absolute top-1/2 left-1/2"></div>
       </div>
+      //{' '}
     </div>
   )
 }
