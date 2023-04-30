@@ -26,7 +26,7 @@ export default function Page() {
       <div
         className="absolute top-0 w-full h-1/2 xl:h-2/3 bg-no-repeat bg-cover transition-opacity duration-500"
         style={{
-          backgroundImage: `linear-gradient(to bottom, transparent 60%, ${fadeColor} 100%), url("/banner.png")`,
+          backgroundImage: `linear-gradient(to bottom, transparent 70%, ${fadeColor} 100%), url("/banner.png")`,
           opacity: bannerOpacity,
         }}
       />
