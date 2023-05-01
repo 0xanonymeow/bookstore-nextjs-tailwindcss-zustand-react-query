@@ -1,12 +1,19 @@
 import Layout from '@/components/Layout'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import type { AppProps } from 'next/app'
 import { Inter } from 'next/font/google'
+import { useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   return (
     <div className={cn('bg-white text-slate-900 antialiased', inter.className)}>
       <div
