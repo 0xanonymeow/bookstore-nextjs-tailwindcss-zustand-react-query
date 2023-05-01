@@ -26,10 +26,45 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.three-d {
+.dark .three-d {
   text-shadow: 0px 5px 0px #533519;
 }
 
-.three-d-p {
+.dark .three-d-p {
   text-shadow: 0px 1.5px 0px #533519;
+}
+
+.floating {
+  -webkit-animation: movebounce 1.8s ease infinite;
+  animation: movebounce 1.8s ease infinite;
+}
+
+@-webkit-keyframes movebounce {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes movebounce {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
 }

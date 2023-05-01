@@ -11,7 +11,7 @@ const Navbar = ({}) => {
           href="/"
           className={cn(
             buttonVariants({ variant: 'link' }),
-            'sm:text-xl font-bold text-white drop-shadow-lg'
+            'text-xl font-bold text-slate-900 dark:text-white dark:drop-shadow-lg'
           )}
         >
           Bedtime Story
@@ -23,25 +23,25 @@ const Navbar = ({}) => {
           <ThemeToggle />
           <Link
             href="/explore"
-            className={cn(buttonVariants({ variant: 'ghost' }), 'sm: text-lg')}
+            className={cn(buttonVariants({ variant: 'ghost' }), 'text-lg')}
           >
             Explore
           </Link>
           <Link
             href="/bestseller"
-            className={cn(buttonVariants({ variant: 'ghost' }), 'sm: text-lg')}
+            className={cn(buttonVariants({ variant: 'ghost' }), 'text-lg')}
           >
             Bestseller
           </Link>
           <Link
             href="/category"
-            className={cn(buttonVariants({ variant: 'ghost' }), 'sm: text-lg')}
+            className={cn(buttonVariants({ variant: 'ghost' }), 'text-lg')}
           >
             Category
           </Link>
           <Link
             href="/saved"
-            className={cn(buttonVariants({ variant: 'ghost' }), 'sm: text-lg')}
+            className={cn(buttonVariants({ variant: 'ghost' }), 'text-lg')}
           >
             Saved
           </Link>

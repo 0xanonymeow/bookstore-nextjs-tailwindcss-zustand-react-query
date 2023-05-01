@@ -1,8 +1,7 @@
 import LargeHeading from '@/components/LargeHeading'
 import Paragraph from '@/components/Paragraph'
 import type { Metadata } from 'next'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: '',
@@ -10,39 +9,29 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  const { theme, systemTheme } = useTheme()
-  const [bannerOpacity, setBannerOpacity] = useState(0)
-  const [fadeColor, setFadeColor] = useState('rgb(248 250 252)')
-
-  useEffect(() => {
-    setBannerOpacity(1)
-    if (theme === 'dark' || (theme === 'system' && systemTheme === 'dark'))
-      return setFadeColor('rgb(15 23 42)')
-    setFadeColor('rgb(248 250 252)')
-  }, [theme, systemTheme])
-
   return (
     <>
-      <div
-        className="absolute top-0 w-full h-1/2 xl:h-2/3 bg-no-repeat bg-cover transition-opacity duration-500"
-        style={{
-          backgroundImage: `linear-gradient(to bottom, transparent 70%, ${fadeColor} 100%), url("/banner.png")`,
-          opacity: bannerOpacity,
-        }}
-      />
-      <div className="relative h-screen flex items-center justify-center overflow-x-hidden">
+      <div className="relative h-full flex items-center justify-center overflow-x-hidden">
         <div className="container pt-32 max-w-7xl mx-auto w-full h-full">
-          <div className="h-full gap-6 flex flex-col justify-start xl:justify-center items-center lg:items-start">
-            <LargeHeading
-              size="lg"
-              className="three-d text-light-gold dark:text-white "
-            >
-              Cozy Bedtime Routine for Little Ones
-            </LargeHeading>
-            <Paragraph className="three-d-p text-white dark:text-white lg:text-left md:text-xl lg:text-2xl xl:text-4xl">
-              Create a Soothing Bedtime Environment with Our Handpicked Books
-            </Paragraph>
-            <div className="relative w-full max-w-lg lg:max-w-3xl lg:left-1/2 aspect-[16/9] lg:absolute"></div>
+          <div className="h-full gap-6 flex flex-col md:flex-row">
+            <div className="w-1/2h-full flex flex-col justify-center order-last md:order-first">
+              <LargeHeading className="three-d dark:text-light-gold text-slate-900">
+                Cozy Bedtime Routine for Little Ones
+              </LargeHeading>
+              <Paragraph className="three-d-p dark:text-white text-slate-400 lg:text-left md:text-xl lg:text-2xl xl:text-4xl">
+                Create a Soothing Bedtime Environment with Our Handpicked Books
+              </Paragraph>
+            </div>
+            {/* <div className="relative w-full max-w-lg lg:max-w-3xl lg:left-1/2 aspect-[16/9] lg:absolute"></div> */}
+            <div className="relative w-full md:w-1-2 h-1/2 md:h-auto aspect-square floating drop-shadow-sm">
+              <Image
+                priority
+                fill
+                src="/art-1.png"
+                alt="art-1"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
           </div>
         </div>
       </div>
