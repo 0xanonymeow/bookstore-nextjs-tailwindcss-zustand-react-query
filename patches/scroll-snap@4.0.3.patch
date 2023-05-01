@@ -1,0 +1,17 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index bb3a0fdc7bec5917ec4a1320f162d4f5cbacc44f..6f551bd4495a723db985ec04fd297296287974d1 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -1,4 +1,4 @@
+-interface Settings {
++export interface Settings {
+     /**
+      * snap-destination for x and y axes
+      * should be a valid css value expressed as px|%|vw|vh
+@@ -31,4 +31,5 @@ export default function createScrollSnap(element: HTMLElement, settings?: Settin
+     bind: () => void;
+     unbind: () => void;
+ };
+-export {};
++export { };
++
