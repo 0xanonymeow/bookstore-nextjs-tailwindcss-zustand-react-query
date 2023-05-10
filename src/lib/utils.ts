@@ -1,3 +1,4 @@
+import { BOOK_URL } from '@/constants/endpoints'
 import { ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
@@ -5,5 +6,9 @@ export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs))
 }
 
-export const fetcher = (url: string, options: RequestInit) =>
-  fetch(url, options).then((res) => res.json())
+export const queryFn = async (options: RequestInit) =>
+  fetch(BOOK_URL, options).then((res) => res.json())
+
+export const transformResponse = <TData>(
+  response: Response & { data: TData }
+) => response.data
