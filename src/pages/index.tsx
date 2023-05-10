@@ -62,14 +62,15 @@ export default function Page() {
           </div>
         </div>
         <div className="w-full h-full max-w-7xl flex flex-col justify-center">
-          <LargeHeading size="sm" className="lg:text-center">
+          <LargeHeading size="md" className="lg:text-center">
             Popular Now
           </LargeHeading>
-          <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-16 gap-4">
+          <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-32 gap-4 items-center">
             {slice(
               map(data, ({ id, title, author, price, img_id }: Book) => (
-                <div key={id} className="">
+                <div key={id} className="flex flex-col items-center">
                   <img
+                    className="w-2/3 sm:w-full"
                     src={`/books/${img_id}.jpg`}
                     alt="title"
                     onError={onImgError}
