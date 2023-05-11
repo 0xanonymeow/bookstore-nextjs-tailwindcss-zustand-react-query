@@ -65,15 +65,18 @@ export default function Page() {
           <LargeHeading size="md" className="lg:text-center">
             Popular Now
           </LargeHeading>
-          <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-32 gap-4 items-center">
+          <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-32 gap-4 items-start">
             {slice(
               map(data, ({ id, title, author, price, img_id }: Book) => (
                 <div key={id} className="flex flex-col items-center">
-                  <img
+                  <Image
                     className="w-2/3 sm:w-full"
+                    width={400} // aspect-ratio of the image not the actual size
+                    height={700} // the actual size is determined by the tailwindcss below
                     src={`/books/${img_id}.jpg`}
                     alt="title"
                     onError={onImgError}
+                    style={{ objectFit: 'contain' }}
                   />
                   <Paragraph>{title}</Paragraph>
                   <Paragraph size="sm">{author}</Paragraph>

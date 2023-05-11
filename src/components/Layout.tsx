@@ -1,8 +1,8 @@
-import Providers from '@/components/Providers'
 import Navbar from '@/components/Navbar'
+import Providers from '@/components/Providers'
 import { Toaster } from 'react-hot-toast'
 
-export default ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Providers>
@@ -15,3 +15,7 @@ export default ({ children }: { children: React.ReactNode }) => {
     </>
   )
 }
+
+Layout.displayName = 'Layout'
+
+export default Layout

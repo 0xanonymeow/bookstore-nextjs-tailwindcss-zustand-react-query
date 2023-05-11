@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import createScrollSnap, { Settings } from 'scroll-snap'
 
-export default (
+export const useScrollSnap = (
   ref: {
     current: HTMLElement | null
   },
@@ -19,7 +19,7 @@ export default (
       setBind(() => bind)
       setUnbind(() => unbind)
     }
-  }, [])
+  }, [ref, settings, callback])
 
   return [scrollBind, scrollUnbind]
 }
