@@ -75,7 +75,7 @@ export default function Page() {
           >
             Popular Now
           </LargeHeading>
-          <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 mt-32 gap-4 items-start">
+          <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mt-32 gap-4 items-start">
             {slice(
               map(data, ({ id, title, author, price }: Book, i: number) => (
                 <div
