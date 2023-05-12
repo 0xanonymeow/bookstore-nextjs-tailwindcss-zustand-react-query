@@ -37,7 +37,7 @@ export default function Page() {
       <div className="w-full flex flex-col max-w-4xl xl:max-w-7xl ">
         <div className="container mt-[24%] md:mt-[12%] mx-auto w-full min-h-[30vh] ">
           <div className="h-2/3 gap-6 flex flex-col md:flex-row ">
-            <div className="w-full flex flex-col justify-between py-16 order-last md:order-first ">
+            <div className="w-full md:w-1/2 flex flex-col gap-6 justify-center py-16 order-last md:order-first ">
               <LargeHeading
                 data-aos="fade-right"
                 data-aos-delay="300"
