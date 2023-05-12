@@ -1,11 +1,12 @@
 import LargeHeading from '@/components/LargeHeading'
 import Paragraph from '@/components/Paragraph'
 import { useGetPopularBooks } from '@/hooks/query/useGetPopularBooks'
+import { pascalCase } from '@/lib/utils'
 import { Book } from '@/store'
 import { forEach, map, slice } from 'lodash'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const metadata: Metadata = {
   title: '',
@@ -13,12 +14,6 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  const containerRef = useRef(null)
-
-  // const [bind, unbind] = useScrollSnap(containerRef, {
-  //   snapDestinationY: '95%',
-  // })
-
   const { data } = useGetPopularBooks()
   const [src, setSrc] = useState([...Array(8)])
 
@@ -38,12 +33,9 @@ export default function Page() {
   }, [data])
 
   return (
-    <div
-      ref={containerRef}
-      className="absolute h-full w-full top-0 left-0 overflow-x-hidden flex justify-center"
-    >
-      <div className="w-full flex flex-col max-w-4xl xl:max-w-7xl">
-        <div className="container mt-[24%] md:mt-[12%] mx-auto w-full h-full min-h-screen ">
+    <div className="w-full  flex items-center justify-center py-16">
+      <div className="w-full flex flex-col max-w-4xl xl:max-w-7xl ">
+        <div className="container mt-[24%] md:mt-[12%] mx-auto w-full min-h-[50vh] ">
           <div className=" h-2/3 gap-6 flex flex-col md:flex-row">
             <div className="w-full md:w-1/2 h-auto md:h-full gap-6 flex flex-col justify-center order-last md:order-first">
               <LargeHeading
@@ -74,14 +66,21 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="w-full h-full max-w-7xl flex flex-col justify-center">
-          <LargeHeading size="md" className="lg:text-center">
+        <div className="w-full h-full max-w-7xl flex flex-col justify-center mt-[12%]">
+          <LargeHeading
+            data-aos="fade-down"
+            data-aos-delay="300"
+            size="md"
+            className="lg:text-center"
+          >
             Popular Now
           </LargeHeading>
           <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-32 gap-4 items-start">
             {slice(
               map(data, ({ id, title, author, price }: Book, i: number) => (
                 <div
+                  data-aos="fade-right"
+                  data-aos-delay={300 + 100 * i}
                   key={id}
                   className="flex flex-col items-center"
                 >
@@ -93,16 +92,23 @@ export default function Page() {
                     alt="title"
                     style={{ objectFit: 'contain' }}
                   />
-                  <Paragraph>{title}</Paragraph>
-                  <Paragraph size="sm">{author}</Paragraph>
-                  <Paragraph size="sm">${price}</Paragraph>
+                  <div className="flex flex-col justify-between h-40">
+                    <Paragraph className="mt-8 font-bold sm:h-14 h-auto">
+                      {pascalCase(title)}
+                    </Paragraph>
+                    <Paragraph size="sm" className="italic">
+                      {author}
+                    </Paragraph>
+                    <Paragraph size="sm" className="font-bold">
+                      ${price}
+                    </Paragraph>
+                  </div>
                 </div>
               )),
               0,
               8
             )}
           </div>
-          <div className="h-screen"></div>
         </div>
       </div>
     </div>
