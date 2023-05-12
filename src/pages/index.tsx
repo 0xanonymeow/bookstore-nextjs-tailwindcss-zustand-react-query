@@ -35,9 +35,9 @@ export default function Page() {
   return (
     <div className="w-full  flex items-center justify-center py-16">
       <div className="w-full flex flex-col max-w-4xl xl:max-w-7xl ">
-        <div className="container mt-[24%] md:mt-[12%] mx-auto w-full min-h-[50vh] ">
-          <div className=" h-2/3 gap-6 flex flex-col md:flex-row">
-            <div className="w-full md:w-1/2 h-auto md:h-full gap-6 flex flex-col justify-center order-last md:order-first">
+        <div className="container mt-[24%] md:mt-[12%] mx-auto w-full min-h-[30vh] ">
+          <div className="h-2/3 gap-6 flex flex-col md:flex-row ">
+            <div className="w-full flex flex-col justify-between py-16 order-last md:order-first ">
               <LargeHeading
                 data-aos="fade-right"
                 data-aos-delay="300"
@@ -75,7 +75,7 @@ export default function Page() {
           >
             Popular Now
           </LargeHeading>
-          <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-32 gap-4 items-start">
+          <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 mt-32 gap-4 items-start">
             {slice(
               map(data, ({ id, title, author, price }: Book, i: number) => (
                 <div
