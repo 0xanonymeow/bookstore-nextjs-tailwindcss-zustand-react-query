@@ -53,10 +53,11 @@ export default function Page() {
                 Create a Soothing Bedtime Environment with Our Handpicked Books
               </Paragraph>
             </div>
-            <div className="relative w-full h-auto md:w-1/2 aspect-square floating drop-shadow-sm ">
+            <div className="relative w-full h-auto md:w-1/2 aspect-square  hover:drop-shadow-[0_10px_10px_rgba(245,188,81,0.8)] dark:hover:drop-shadow-[0_10px_10px_rgba(255,255,255,0.5)] transition-all duration-300 transform hover:scale-105">
               <Image
                 data-aos="fade-left"
                 data-aos-delay="300"
+                className="floating"
                 priority
                 fill
                 src="/art-1.png"
@@ -82,10 +83,10 @@ export default function Page() {
                   data-aos="fade-right"
                   data-aos-delay={300 + 100 * i}
                   key={id}
-                  className="flex flex-col items-center"
+                  className="flex flex-col items-center z-0 hover:z-50 relative"
                 >
                   <Image
-                    className="w-2/3 sm:w-full"
+                    className="w-2/3 sm:w-full transform hover:scale-110 transition-transform duration-300"
                     width={400} // aspect-ratio of the image not the actual size
                     height={700} // the actual size is determined by the tailwindcss below
                     src={src[i]}
