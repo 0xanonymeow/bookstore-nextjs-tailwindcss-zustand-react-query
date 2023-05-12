@@ -2,10 +2,10 @@ import LargeHeading from '@/components/LargeHeading'
 import Paragraph from '@/components/Paragraph'
 import { useGetPopularBooks } from '@/hooks/query/useGetPopularBooks'
 import { Book } from '@/store'
-import { map, slice } from 'lodash'
+import { forEach, map, slice } from 'lodash'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { SyntheticEvent, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export const metadata: Metadata = {
   title: '',
@@ -20,9 +20,22 @@ export default function Page() {
   // })
 
   const { data } = useGetPopularBooks()
+  const [src, setSrc] = useState([...Array(8)])
 
-  const onImgError = (e: SyntheticEvent<HTMLImageElement, Event>) =>
-    (e.currentTarget.src = '/books/blank.jpg')
+  useEffect(() => {
+    const srcArr = [...src]
+    forEach(data, async ({ img_id }, i) => {
+      try {
+        ;(await import(`../../public/books/${img_id}.jpg`)).default
+        srcArr[i] = `/books/${img_id}.jpg`
+      } catch (e) {
+        srcArr[i] = '/books/blank.jpg'
+      } finally {
+        setSrc([...srcArr])
+      }
+    })
+    console.log(src)
+  }, [data])
 
   return (
     <div
@@ -67,15 +80,17 @@ export default function Page() {
           </LargeHeading>
           <div className="container w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-32 gap-4 items-start">
             {slice(
-              map(data, ({ id, title, author, price, img_id }: Book) => (
-                <div key={id} className="flex flex-col items-center">
+              map(data, ({ id, title, author, price }: Book, i: number) => (
+                <div
+                  key={id}
+                  className="flex flex-col items-center"
+                >
                   <Image
                     className="w-2/3 sm:w-full"
                     width={400} // aspect-ratio of the image not the actual size
                     height={700} // the actual size is determined by the tailwindcss below
-                    src={`/books/${img_id}.jpg`}
+                    src={src[i]}
                     alt="title"
-                    onError={onImgError}
                     style={{ objectFit: 'contain' }}
                   />
                   <Paragraph>{title}</Paragraph>
